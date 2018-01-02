@@ -12,6 +12,7 @@ name = "pypi"
 [packages]
 
 django = "==1.11.9"
+requests = "*"
 
 
 [requires]
