@@ -7,6 +7,7 @@ Tracking Lyle sightings since 2018.
 ## Todo
 
  - [ ] holding page
+ - [ ] sightings model
  - [ ] management command to import tagged instagrams
  - [ ] front-end styling
  - [ ] admin UI to approve / reject new photos
@@ -14,3 +15,10 @@ Tracking Lyle sightings since 2018.
  - [ ] user whitelisting
  - [ ] map view
  - [ ] dokku deployment
+ - [ ] apply for Instagram full API
+
+## Notes
+
+ - Instagram oEmbed options: https://www.instagram.com/developer/embedding/
+ - Scraper, if necessary: https://github.com/rarcega/instagram-scraper
+  - `instagram-scraper lylesighting --tag --media-metadata --media-types=none`
