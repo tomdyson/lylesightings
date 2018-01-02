@@ -6,7 +6,7 @@ Tracking Lyle sightings since 2018.
 
 ## Todo
 
- - [ ] holding page
+ - [x] holding page
  - [ ] sightings model
  - [ ] management command to import tagged instagrams
  - [ ] front-end styling
