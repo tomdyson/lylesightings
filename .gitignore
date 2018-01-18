@@ -101,5 +101,5 @@ ENV/
 .mypy_cache/
 
 .code-workspace
-db.sqlite3
+*.sqlite3
 README-local.md
