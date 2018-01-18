@@ -13,6 +13,7 @@ name = "pypi"
 
 django = "==1.11.9"
 requests = "*"
+django-location-field = "*"
 
 
 [requires]
