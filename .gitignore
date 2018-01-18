@@ -103,3 +103,4 @@ ENV/
 .code-workspace
 *.sqlite3
 README-local.md
+scrapings/
