@@ -7,7 +7,7 @@ Tracking Lyle sightings since 2018.
 ## Todo
 
  - [x] holding page
- - [ ] sightings model
+ - [x] sightings model
  - [ ] management command to import tagged instagrams
  - [ ] front-end styling
  - [ ] admin UI to approve / reject new photos
