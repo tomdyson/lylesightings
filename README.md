@@ -25,4 +25,4 @@ Tracking Lyle sightings since 2018.
 
  - Instagram oEmbed options: https://www.instagram.com/developer/embedding/
  - Scraper, if necessary: https://github.com/rarcega/instagram-scraper
-  - `instagram-scraper lylesighting --tag --media-metadata --media-types=none`
+  - `instagram-scraper lylesighting --tag --media-metadata --latest --media-types=none -d scrapings`
