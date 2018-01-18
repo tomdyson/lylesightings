@@ -17,6 +17,10 @@ Tracking Lyle sightings since 2018.
  - [ ] dokku deployment
  - [ ] apply for Instagram full API
 
+## Developing
+
+`pipenv shell`
+
 ## Notes
 
  - Instagram oEmbed options: https://www.instagram.com/developer/embedding/
