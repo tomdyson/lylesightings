@@ -8,7 +8,7 @@ class Sighting(models.Model):
     datetime = models.DateTimeField('date and time seen')
     url = models.CharField(max_length=250, verbose_name="URL")
     city = models.CharField(max_length=255, null=True, blank=True)
-    location = PlainLocationField(based_fields=['city'], zoom=7)
+    location = PlainLocationField(based_fields=['city'], zoom=7, null=True, blank=True)
 
     def __str__(self):
         return '{sighter} in {city}'.format(sighter=self.sighter, city=self.city)
