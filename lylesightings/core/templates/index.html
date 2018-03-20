@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Recent Sightings</h1>
+<ul>
+{% for sighting in latest_sightings %}
+    <iframe src="{{ sighting.url }}embed" 
+        width="400" height="480" 
+        frameborder="0" scrolling="no" 
+        allowtransparency="true">
+    </iframe>
+{% endfor %}
+</ul>
+{% endblock %}

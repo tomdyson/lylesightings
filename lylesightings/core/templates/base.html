@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>
+            Lyle Sightings
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/tachyons.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/core.css' %}">
+        <style>
+          .big-image { font-size: 2rem; }
+          p {max-width: 34em}
+          .short {max-width: 14em}
+        </style>
+    </head>
+
+    <body class="athelas black-80">
+        <header class="bg-washed-blue ph3 ph5-ns pa1">
+            <h4 class="f4 fw1">
+                <a href = "/" class="no-underline">lylesightings</a> // 
+                <a href = "/" class="no-underline">about</a></h4>
+        </header>
+        
+        <section>
+            <article class="lh-copy mh3 mh5-ns">
+                {% block content %}{% endblock %}
+            </article>
+        </section>
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/tomd.js' %}"></script>
+    </body>
+</html>
