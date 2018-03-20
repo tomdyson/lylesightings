@@ -21,6 +21,10 @@ Tracking Lyle sightings since 2018.
 
 `pipenv shell`
 
+Import Lyles:
+
+`./manage.py scrapelyles`
+
 ## Notes
 
  - Instagram oEmbed options: https://www.instagram.com/developer/embedding/
