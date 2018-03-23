@@ -1,8 +1,11 @@
 import json
 import subprocess
-from os import path
+import requests
+import os
 from datetime import datetime
+from urllib.parse import urlparse
 from django.core.management.base import BaseCommand, CommandError
+from django.core.files import File
 from django.conf import settings
 from django.db.utils import IntegrityError
 from core.models import Sighting
@@ -10,7 +13,7 @@ from core.models import Sighting
 class Command(BaseCommand):
     help = 'Scrapes Instagram for posts tagged #lylesighting'
 
-    scrapings_dir = path.join(settings.BASE_DIR, 'scrapings')
+    scrapings_dir = os.path.join(settings.BASE_DIR, 'scrapings')
 
     def _fetchJSON(self):
         """instagram-scraper lylesighting --tag --media-metadata --latest --media-types=none -d scrapings"""
@@ -44,13 +47,14 @@ class Command(BaseCommand):
             post['timestamp'] = timestamp
             post['caption'] = caption
             post['sighter'] = sighter
+            post['photo'] = item['display_url']
             posts.append(post)
         return posts
 
 
     def handle(self, *args, **options):
         self._fetchJSON()
-        scrapings_file = path.join(self.scrapings_dir, 'lylesighting.json')
+        scrapings_file = os.path.join(self.scrapings_dir, 'lylesighting.json')
         posts = self._parseJSON(scrapings_file)
         for post in posts:
             sighting = Sighting()
@@ -58,7 +62,18 @@ class Command(BaseCommand):
             sighting.datetime = post['timestamp']
             sighting.description = post['caption']
             sighting.sighter = post['sighter']
+            # fetch the image
+            print('fetching image ' + post['photo'])
+            url = post['photo']
+            r = requests.get(url)
+            filename = os.path.basename(urlparse(url).path)
+            with open(filename, 'wb') as f:
+                f.write(r.content)
+            reopen = open(filename, 'rb')
+            django_file = File(reopen)
+            sighting.photo = django_file
             try:
                 sighting.save()
             except(IntegrityError):  # fail on duplicates
                 print('could not insert sighting ' + sighting.url)
+            os.remove(filename)
