@@ -105,3 +105,4 @@ ENV/
 README-local.md
 scrapings/
 /static/*
+/media/*
