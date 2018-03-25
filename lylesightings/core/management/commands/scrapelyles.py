@@ -8,7 +8,7 @@ from django.core.management.base import BaseCommand, CommandError
 from django.core.files import File
 from django.conf import settings
 from django.db.utils import IntegrityError
-from core.models import Sighting
+from core.models import Sighting, Spotter
 
 class Command(BaseCommand):
     help = 'Scrapes Instagram for posts tagged #lylesighting'
@@ -42,7 +42,7 @@ class Command(BaseCommand):
                 caption = edges[0]['node']['text']
             else:
                 caption = ""
-            sighter = "scraper-{0}".format(item['owner']['id'])
+            sighter = item['owner']['id']
             post['url'] = url
             post['timestamp'] = timestamp
             post['caption'] = caption
@@ -62,6 +62,15 @@ class Command(BaseCommand):
             sighting.datetime = post['timestamp']
             sighting.description = post['caption']
             sighting.sighter = post['sighter']
+            try:
+                spotter = Spotter.objects.get(instagram_id=post['sighter'])
+            except Spotter.DoesNotExist:
+                spotter = Spotter(
+                    name='instagram user ' + post['sighter'],
+                    instagram_id=post['sighter']
+                )
+                spotter.save()
+            sighting.spotter = spotter
             # fetch the image
             print('fetching image ' + post['photo'])
             url = post['photo']

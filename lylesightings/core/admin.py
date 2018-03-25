@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from core.models import Sighting
+from core.models import Sighting, Spotter
 
 admin.site.register(Sighting)
+admin.site.register(Spotter)

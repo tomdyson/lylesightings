@@ -1,12 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Recent Sightings</h1>
 
-{% for sighting in latest_sightings %}
-<div>
+<section class="mw7 center">
+    <h1 class="f1 pt4 f-headline-ns">Lyle Sightings</h1>
+    {% for sighting in latest_sightings %}
+        <article class="">
+        <a class="db pv4  no-underline black dim" href="/sighting/{{sighting.id}}">
+            <div class="flex flex-column flex-row-ns">
+                <div class="pr3-ns mb4 mb0-ns w-100 w-100-ns">
+                    <img src="/media/{{sighting.photo}}" class="db" alt="">
+                </div>
+                <div class="w-100 w-60-ns pl3-ns ph2">
+                    <h1 class="f3 fw3 mt0 lh-title">{{sighting.description}}</h1>
+                    <p class="f6 lh-copy mv0">Spotted on 
+                        {{sighting.datetime|date}} <br>
+                        by {{sighting.spotter.name}}
+                    </p>
+                </div>
+            </div>
+        </a>
+        </article>
+    {% endfor %}
+  </section>
+<!-- <div>
     <img src="/media/{{sighting.photo}}" width="480" />
-</div>
-{% endfor %}
+</div> -->
 
 {% endblock %}
