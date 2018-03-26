@@ -12,7 +12,7 @@ Tracking Lyle sightings since 2018.
  - [x] front-end styling
  - [-] Heroku deployment
    - [ ] PostgreSQL
-   - [ ] S3 for media
+   - [x] S3 for media
    - [ ] Google Maps key
  - [ ] Pagination
  - [x] Cloudflare for SSL & performance
