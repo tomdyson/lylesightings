@@ -11,7 +11,7 @@ Tracking Lyle sightings since 2018.
  - [x] management command to import tagged instagrams
  - [x] front-end styling
  - [-] Heroku deployment
-   - [ ] PostgreSQL
+   - [x] PostgreSQL
    - [x] S3 for media
    - [ ] Google Maps key
  - [ ] Pagination
