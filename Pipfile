@@ -21,6 +21,7 @@ pylint = "*"
 "autopep8" = "*"
 pylint-django = "*"
 pillow = "*"
+whitenoise = "*"
 
 
 [requires]
