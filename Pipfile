@@ -22,6 +22,9 @@ pylint = "*"
 pylint-django = "*"
 pillow = "*"
 whitenoise = "*"
+django-storages = "*"
+"boto3" = "*"
+python-dotenv = "*"
 
 
 [requires]
