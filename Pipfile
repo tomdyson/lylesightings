@@ -25,6 +25,8 @@ whitenoise = "*"
 django-storages = "*"
 "boto3" = "*"
 python-dotenv = "*"
+dj-database-url = "*"
+"psycopg2" = "*"
 
 
 [requires]
