@@ -1,16 +1,14 @@
 FROM python:3.6
-LABEL maintainer="Tom Dyson"
 
 ENV PYTHONUNBUFFERED 1
-ENV DJANGO_ENV dev
 
-RUN pip install pipenv
-RUN pipenv install --system
 RUN pip install gunicorn
+ADD requirements.txt /code/
+RUN pip install -r /code/requirements.txt
 
 COPY . /code/
-WORKDIR /code/
+WORKDIR /code/lylesightings
 
-EXPOSE 8000
+# EXPOSE 8000
 RUN python manage.py migrate
-CMD exec gunicorn wagtail_docker_test.wsgi:application --bind 0.0.0.0:8000 --workers 3
+CMD exec gunicorn lylesightings.wsgi:application --bind 0.0.0.0:$PORT --workers 3
