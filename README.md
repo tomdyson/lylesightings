@@ -25,6 +25,13 @@ Import Lyles:
 
 `./manage.py scrapelyles`
 
+## Deploying
+
+```
+pipenv run pip freeze > requirements.txt
+heroku container:push web
+```
+
 ## Notes
 
  - Instagram oEmbed options: https://www.instagram.com/developer/embedding/
