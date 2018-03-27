@@ -8,5 +8,6 @@ class SightingAdmin(admin.ModelAdmin):
     list_display = ('description', 'datetime')
 
 admin.site.site_header = "Lylesightings Administration"
+admin.site.index_title = ""
 admin.site.register(Sighting, SightingAdmin)
 admin.site.register(Spotter)
