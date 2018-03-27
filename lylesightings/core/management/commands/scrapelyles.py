@@ -71,18 +71,20 @@ class Command(BaseCommand):
                 )
                 spotter.save()
             sighting.spotter = spotter
-            # fetch the image
-            print('fetching image ' + post['photo'])
-            url = post['photo']
-            r = requests.get(url)
-            filename = os.path.basename(urlparse(url).path)
-            with open(filename, 'wb') as f:
-                f.write(r.content)
-            reopen = open(filename, 'rb')
-            django_file = File(reopen)
-            sighting.photo = django_file
             try:
                 sighting.save()
+                # fetch the image
+                print('fetching image ' + post['photo'])
+                url = post['photo']
+                r = requests.get(url)
+                filename = os.path.basename(urlparse(url).path)
+                with open(filename, 'wb') as f:
+                    f.write(r.content)
+                reopen = open(filename, 'rb')
+                django_file = File(reopen)
+                sighting.photo = django_file
+                print('adding ' + sighting.url)
+                sighting.save()
+                os.remove(filename)
             except(IntegrityError):  # fail on duplicates
-                print('could not insert sighting ' + sighting.url)
-            os.remove(filename)
+                print('skipping ' + sighting.url)
