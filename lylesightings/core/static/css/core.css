@@ -1,0 +1,12 @@
+.big-image { font-size: 2rem; }
+p {max-width: 34em}
+.short {max-width: 14em}
+.avenir {
+  font-family: 
+      'avenir next', avenir,
+      -apple-system, BlinkMacSystemFont,
+      'helvetica neue', helvetica,
+      ubuntu, roboto, noto,
+      'segoe ui', arial,
+      sans-serif;
+  }
