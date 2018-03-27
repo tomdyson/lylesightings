@@ -94,6 +94,7 @@ DATABASES = {
 if 'DATABASE_URL' in os.environ:
     db_from_env = dj_database_url.config()
     DATABASES['default'].update(db_from_env)
+    DEBUG = False
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -145,5 +146,6 @@ MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 LOCATION_FIELD = {
-    'provider.google.api_key': os.environ.get("GOOGLE_MAPS_KEY")
+    'provider.google.api_key': os.environ.get("GOOGLE_MAPS_KEY"),
+    'map.zoom': 10
 }
