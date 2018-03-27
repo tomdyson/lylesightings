@@ -145,7 +145,8 @@ AWS_S3_CUSTOM_DOMAIN = 's3-us-west-1.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+GOOGLE_MAPS_KEY = os.environ.get("GOOGLE_MAPS_KEY")
 LOCATION_FIELD = {
-    'provider.google.api_key': os.environ.get("GOOGLE_MAPS_KEY"),
+    'provider.google.api_key': GOOGLE_MAPS_KEY,
     'map.zoom': 10
 }
