@@ -6,16 +6,21 @@
     <h1 class="f1 pt4 f-headline-ns">Lyle Sightings</h1>
     {% for sighting in latest_sightings %}
         <article class="">
-        <a class="db pv4  no-underline black dim" href="/sighting/{{sighting.id}}">
+        <a class="db pv4 no-underline black dim" href="/sighting/{{sighting.id}}">
             <div class="flex flex-column flex-row-ns">
                 <div class="pr3-ns mb4 mb0-ns w-100 w-100-ns">
-                    <img src="{{ MEDIA_URL }}{{sighting.photo}}" class="db" alt="">
+                    <img src="{{ MEDIA_URL }}{{sighting.photo}}" class="db br2" alt="">
                 </div>
                 <div class="w-100 w-60-ns pl3-ns ph2">
                     <h1 class="f3 fw3 mt0 lh-title">{{sighting.description}}</h1>
                     <p class="f6 lh-copy mv0">Spotted on 
                         {{sighting.datetime|date}} <br>
-                        by {{sighting.spotter.name}}
+                        by {{sighting.spotter.name}} 
+                        {% if sighting.location %}<br>
+                        <img class="map br2" width="160" 
+                            src="https://maps.googleapis.com/maps/api/staticmap?center={{sighting.location}}&zoom=6&scale=2&size=300x300&maptype=roadmap&format=png&visual_refresh=true&markers=icon:https://lylesightings.com/static/favicon-32x32.png%7Cshadow:true%7C{{sighting.location}}" 
+                            alt="Google Map of {{sighting.location}}">
+                        {% endif %}
                     </p>
                 </div>
             </div>

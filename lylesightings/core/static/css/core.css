@@ -10,3 +10,6 @@ p {max-width: 34em}
       'segoe ui', arial,
       sans-serif;
   }
+.map {
+  margin-top: 15px;
+}
