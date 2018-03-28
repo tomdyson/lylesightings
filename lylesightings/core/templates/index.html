@@ -17,7 +17,7 @@
                         {{sighting.datetime|date}} <br>
                         by {{sighting.spotter.name}} 
                         {% if sighting.location %}<br>
-                        <img class="map br2" width="160" 
+                        <img class="map br-100" width="140" 
                             src="https://maps.googleapis.com/maps/api/staticmap?center={{sighting.location}}&zoom=6&scale=2&size=300x300&maptype=roadmap&format=png&visual_refresh=true&markers=icon:https://lylesightings.com/static/favicon-32x32.png%7Cshadow:true%7C{{sighting.location}}&key={{google_maps_key}}" 
                             alt="Google Map of {{sighting.location}}">
                         {% endif %}
