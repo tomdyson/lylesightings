@@ -17,7 +17,7 @@ Tracking Lyle sightings since 2018.
    - [x] Schedule for Instagram scraping
  - [x] Cloudflare for SSL & performance
  - [x] Don't fetch duplicate images
- - [ ] Pagination (https://codepen.io/roylodder/pen/bBbdoe)
+ - [x] Pagination (https://codepen.io/roylodder/pen/bBbdoe)
  - [ ] Show/hide status flag
  - [ ] map view
  - [ ] admin UI to approve / reject new photos
@@ -27,7 +27,7 @@ Tracking Lyle sightings since 2018.
 
 ## Developing
 
-`pipenv shell`
+`pipenv run lylesightings/manage.py runserver`
 
 Import Lyles:
 
@@ -37,6 +37,7 @@ Import Lyles:
 
 ```
 pipenv run pip freeze > requirements.txt
+git push heroku # or
 heroku container:push web
 ```
 

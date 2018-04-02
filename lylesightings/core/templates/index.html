@@ -27,7 +27,19 @@
         </a>
         </article>
     {% endfor %}
-  </section>
+    <div class="mw8 center">
+        <nav class="cf pa3 pa4-ns" data-name="pagination-next-prev">
+            {% if latest_sightings.has_previous %}
+                <a class="fl dib link dim f6 f5-ns pa2" 
+                    href="?page={{ latest_sightings.previous_page_number }}" title="Previous">&larr; Previous</a>
+            {% endif %}
+            {% if latest_sightings.has_next %}
+                <a class="fr dib link dim f6 f5-ns pa2" 
+                    href="?page={{ latest_sightings.next_page_number }}" title="Next">Next &rarr;</a>
+            {% endif %}
+        </nav>
+    </div>
+</section>
 <!-- <div>
     <img src="/media/{{sighting.photo}}" width="480" />
 </div> -->
