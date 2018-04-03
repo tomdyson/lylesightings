@@ -17,9 +17,10 @@ Tracking Lyle sightings since 2018.
    - [x] Schedule for Instagram scraping
  - [x] Cloudflare for SSL & performance
  - [x] Don't fetch duplicate images
- - [x] Pagination (https://codepen.io/roylodder/pen/bBbdoe)
+ - [x] Pagination
+ - [-] map view
+   - [ ] link markers to detail pages
  - [ ] Show/hide status flag
- - [ ] map view
  - [ ] admin UI to approve / reject new photos
  - [ ] admin UI to override image data, e.g. location information
  - [ ] user whitelisting
