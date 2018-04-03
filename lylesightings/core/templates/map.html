@@ -25,10 +25,17 @@
     var bounds = new google.maps.LatLngBounds();
     function initMap() {
         var map = new google.maps.Map(document.getElementById('sightings-map'), {});
+        var image = 'https://lylesightings.com/static/favicon-32x32.png';
         for (var i = 0; i < sightings.length; i++) {
+            var sighting = sightings[i]
             var marker = new google.maps.Marker({
-                position: {lat: sightings[i][0], lng: sightings[i][1]},
-                map: map
+                position: {lat: sighting[0], lng: sighting[1]},
+                map: map,
+                url: '/sighting/' + sighting[2],
+                icon: image
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+                window.location.href = this.url;
             });
             bounds.extend(marker.getPosition());
         }
