@@ -4,9 +4,9 @@
 
 <section class="mw7 center">
     <h1 class="f1 pt4 f-headline-ns">Lyle Sightings</h1>
-    {% for sighting in latest_sightings %}
+    {% for sighting in sightings %}
         <article class="">
-        <a class="db pv4 no-underline black dim" href="/sighting/{{sighting.id}}">
+        <a class="db pv4 no-underline black dim" href="/sighting/{{sighting.id}}/">
             <div class="flex flex-column flex-row-ns">
                 <div class="pr3-ns mb4 mb0-ns w-100 w-100-ns">
                     <img src="{{ MEDIA_URL }}{{sighting.photo}}" class="db br2" alt="">
@@ -29,19 +29,16 @@
     {% endfor %}
     <div class="mw8 center">
         <nav class="cf pa3 pa4-ns" data-name="pagination-next-prev">
-            {% if latest_sightings.has_previous %}
+            {% if sightings.has_previous %}
                 <a class="fl dib link dim f6 f5-ns pa2" 
-                    href="?page={{ latest_sightings.previous_page_number }}" title="Previous">&larr; Previous</a>
+                    href="?page={{ sightings.previous_page_number }}" title="Previous">&larr; Previous</a>
             {% endif %}
-            {% if latest_sightings.has_next %}
+            {% if sightings.has_next %}
                 <a class="fr dib link dim f6 f5-ns pa2" 
-                    href="?page={{ latest_sightings.next_page_number }}" title="Next">Next &rarr;</a>
+                    href="?page={{ sightings.next_page_number }}" title="Next">Next &rarr;</a>
             {% endif %}
         </nav>
     </div>
 </section>
-<!-- <div>
-    <img src="/media/{{sighting.photo}}" width="480" />
-</div> -->
 
 {% endblock %}

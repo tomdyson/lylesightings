@@ -20,6 +20,14 @@ class Sighting(models.Model):
     location = PlainLocationField(based_fields=['city'], zoom=7, null=True,
                                   blank=True)
 
+    def lat(self):
+        if self.location and len(self.location):
+            return self.location.split(',')[0]
+
+    def lon(self):
+        if self.location and len(self.location):
+            return self.location.split(',')[1]
+
     def __str__(self):
         return '{sighter} in {city}'.format(sighter=self.spotter.name,
                                             city=self.city)

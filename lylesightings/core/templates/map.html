@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    #sightings-map {
+        height: 400px;
+        width: 100%;
+    }
+</style>
+
+<section class="mw7 center">
+    <a class="no-underline black dim" href = "/"><h1 class="f1 pt2">Lyle Sightings</h1></a>
+
+    <div id="sightings-map" class="w-100"></div>
+</section>
+
+<script src="https://maps.googleapis.com/maps/api/js?key={{google_maps_key}}"></script>
+<script>
+    var sightings = [
+        {% for s in sightings %}
+            [{{ s.lat }}, {{ s.lon }}, {{s.id}}],
+        {% endfor %}
+    ];
+    var bounds = new google.maps.LatLngBounds();
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('sightings-map'), {});
+        for (var i = 0; i < sightings.length; i++) {
+            var marker = new google.maps.Marker({
+                position: {lat: sightings[i][0], lng: sightings[i][1]},
+                map: map
+            });
+            bounds.extend(marker.getPosition());
+        }
+        map.fitBounds(bounds);
+    }
+    google.maps.event.addDomListener(window, 'load', initMap);
+</script>
+
+{% endblock %}

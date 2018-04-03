@@ -21,7 +21,12 @@ from django.conf.urls.static import static
 
 from core import views
 
-urlpatterns = [path('', views.index, name='index'), url(r'^admin/', admin.site.urls)]
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('sighting/<int:sighting>/', views.detail, name='sighting-detail'),
+    path('map/', views.map, name='map'),
+    url(r'^admin/', admin.site.urls)
+]
 
 if settings.DEBUG:
     urlpatterns = urlpatterns + static(
