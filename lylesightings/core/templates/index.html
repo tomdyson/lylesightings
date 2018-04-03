@@ -1,44 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<section class="mw7 center">
-    <h1 class="f1 pt4 f-headline-ns">Lyle Sightings</h1>
     {% for sighting in sightings %}
-        <article class="">
-        <a class="db pv4 no-underline black dim" href="/sighting/{{sighting.id}}/">
-            <div class="flex flex-column flex-row-ns">
-                <div class="pr3-ns mb4 mb0-ns w-100 w-100-ns">
-                    <img src="{{ MEDIA_URL }}{{sighting.photo}}" class="db br2" alt="">
-                </div>
-                <div class="w-100 w-60-ns pl3-ns ph2">
-                    <h1 class="f3 fw3 mt0 lh-title">{{sighting.description}}</h1>
-                    <p class="f6 lh-copy mv0">Spotted on 
-                        {{sighting.datetime|date}} <br>
-                        by {{sighting.spotter.name}} 
-                        {% if sighting.location %}<br>
-                        <img class="map br-100" width="140" 
-                            src="https://maps.googleapis.com/maps/api/staticmap?center={{sighting.location}}&zoom=6&scale=2&size=300x300&maptype=roadmap&format=png&visual_refresh=true&markers=icon:https://lylesightings.com/static/favicon-32x32.png%7Cshadow:true%7C{{sighting.location}}&key={{google_maps_key}}" 
-                            alt="Google Map of {{sighting.location}}">
-                        {% endif %}
-                    </p>
-                </div>
+        <article class="pv4 flex flex-column flex-row-ns">
+            <div class="pr3-ns mb4 mb0-ns w-100 w-100-ns">
+                <img src="{{ MEDIA_URL }}{{sighting.photo}}" class="db br2" alt="">
             </div>
-        </a>
+            <div class="w-100 w-60-ns pl3-ns ph2">
+                <h1 class="f3 fw3 mt0 lh-title">{{sighting.description}}</h1>
+                <p class="f6 lh-copy mv0">Spotted on 
+                    {{sighting.datetime|date}} <br>
+                    by {{sighting.spotter.name}} 
+                    {% if sighting.location %}<br>
+                    <img class="map br-100" width="140" 
+                        src="https://maps.googleapis.com/maps/api/staticmap?center={{sighting.location}}&zoom=6&scale=2&size=300x300&maptype=roadmap&format=png&visual_refresh=true&markers=icon:https://lylesightings.com/static/favicon-32x32.png%7Cshadow:true%7C{{sighting.location}}&key={{google_maps_key}}" 
+                        alt="Google Map of {{sighting.location}}">
+                    {% endif %}
+                </p>
+            </div>
         </article>
     {% endfor %}
     <div class="mw8 center">
         <nav class="cf pa3 pa4-ns" data-name="pagination-next-prev">
             {% if sightings.has_previous %}
-                <a class="fl dib link dim f6 f5-ns pa2" 
+                <a class="fl dib link f6 f5-ns pa2 black bg-animate hover-bg-light-yellow" 
                     href="?page={{ sightings.previous_page_number }}" title="Previous">&larr; Previous</a>
             {% endif %}
             {% if sightings.has_next %}
-                <a class="fr dib link dim f6 f5-ns pa2" 
+                <a class="fr dib link f6 f5-ns pa2 black bg-animate hover-bg-light-yellow" 
                     href="?page={{ sightings.next_page_number }}" title="Next">Next &rarr;</a>
             {% endif %}
         </nav>
     </div>
-</section>
-
 {% endblock %}

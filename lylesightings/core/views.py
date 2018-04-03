@@ -33,3 +33,6 @@ def map(request):
         'google_maps_key': settings.GOOGLE_MAPS_KEY
     }
     return render(request, 'map.html', context)
+
+def about(request):
+    return render(request, 'about.html')

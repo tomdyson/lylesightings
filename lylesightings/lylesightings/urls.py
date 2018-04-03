@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('sighting/<int:sighting>/', views.detail, name='sighting-detail'),
     path('map/', views.map, name='map'),
+    path('about/', views.about, name='about'),
     url(r'^admin/', admin.site.urls)
 ]
 
