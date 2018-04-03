@@ -1,21 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<section class="mw7 center">
-    <a class="no-underline black dim" href = "/"><h1 class="f1 pt2">Lyle Sightings</h1></a>
-    <article>
-        <div class="pr3-ns mb4 mb0-ns w-100 w-100-ns">
-            <img src="{{ MEDIA_URL }}{{sighting.photo}}" class="db br2" alt="">
+<article>
+    <div class="pr3-ns mt4 pt1 mb4 mb0-ns w-100 w-100-ns">
+        <img src="{{ MEDIA_URL }}{{sighting.photo}}" class="db br2" alt="">
+    </div>
+    <div class="flex flex-column flex-row-ns">
+        <div class="w-70">
+            <h1 class="f5 mt3 fw5 lh-title ">{{sighting.description}}</h1>
+            <p class="f6 lh-copy mv0">Spotted on 
+            {{sighting.datetime|date}} by 
+            {{sighting.spotter.name}}</p>
         </div>
-        <div class="flex flex-column flex-row-ns">
-            <div class="w-70">
-                <h1 class="f5 mt3 fw5 lh-title ">{{sighting.description}}</h1>
-                <p class="f6 lh-copy mv0">Spotted on 
-                {{sighting.datetime|date}} by 
-                {{sighting.spotter.name}}</p>
-            </div>
-        </div>
-    </article>
-</section>
+    </div>
+</article>
 {% endblock %}
