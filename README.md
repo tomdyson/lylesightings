@@ -18,8 +18,8 @@ Tracking Lyle sightings since 2018.
  - [x] Cloudflare for SSL & performance
  - [x] Don't fetch duplicate images
  - [x] Pagination
- - [-] map view
-   - [ ] link markers to detail pages
+ - [x] map view
+   - [x] link markers to detail pages
  - [ ] Show/hide status flag
  - [ ] admin UI to approve / reject new photos
  - [ ] admin UI to override image data, e.g. location information
