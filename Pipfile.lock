@@ -31,10 +31,10 @@
     "default": {
         "astroid": {
             "hashes": [
-                "sha256:b76e5109ff0f386dd229673ca1323d21b1e9bb9c38eaed2cf830882dd7628be2",
-                "sha256:a92c1197dd496ef2470e73e1c296fc02a719907ee07259744e26a13bda9d4862"
+                "sha256:38186e481b65877fd8b1f9acc33e922109e983eb7b6e487bd4c71002134ad331",
+                "sha256:35cfae47aac19c7b407b7095410e895e836f2285ccf1220336afba744cc4c5f2"
             ],
-            "version": "==1.6.2"
+            "version": "==1.6.3"
         },
         "autopep8": {
             "hashes": [
@@ -52,17 +52,17 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:9f1b2fa42fea254ad2e97c0ec3c4ec4c9aaf814cc31fd77853ff5bc7776f939d",
-                "sha256:0f6e11b873c5a7127c17ca614487335e1b8f07f786053fc73c5c4aff81136e36"
+                "sha256:4c746d55fb6294c11e78db76648c7f321f8068dc5ab402456b5e3e4ee52423b9",
+                "sha256:5c02372447e07bd67f7c19624642dcf5c7aabe126e1c44ff4ad241aeb97fc729"
             ],
-            "version": "==1.6.22"
+            "version": "==1.7.2"
         },
         "botocore": {
             "hashes": [
-                "sha256:565102445ea5b9f32fe4681cf955d5eec3ea23f396d528dcfb24f45be7180003",
-                "sha256:59933693c329ce059d4a29bdd72c02db5c5119228d88d64f829454f4253feddd"
+                "sha256:8ded801591ef5df04244dc1ba2496dd04a9abbd165d0d2ad501b6cd4b34946d4",
+                "sha256:27945af4bfb2a1ff1f11c730d24b84da6e1f40465907029e8980903f3b984070"
             ],
-            "version": "==1.9.22"
+            "version": "==1.10.2"
         },
         "certifi": {
             "hashes": [
@@ -155,9 +155,9 @@
         },
         "instagram-scraper": {
             "hashes": [
-                "sha256:41901aa4e9a837169b97eca377da67729c6947193ba23b1b04367c3083315ece"
+                "sha256:1b5b2446fdd8028b62a661fb1121c531341074e6267b8000f60ebbbe4d632d18"
             ],
-            "version": "==1.5.26"
+            "version": "==1.5.28"
         },
         "isort": {
             "hashes": [
@@ -318,10 +318,10 @@
         },
         "pylint": {
             "hashes": [
-                "sha256:34ab1a62fbdd48059d082f5a52b7e719a39b757a53ecbf0b2b7169b9c6a2cc28",
-                "sha256:c77311859e0c2d7932095f30d2b1bfdc4b6fe111f534450ba727a52eae330ef2"
+                "sha256:0b7e6b5d9f1d4e0b554b5d948f14ed7969e8cdf9a0120853e6e5af60813b18ab",
+                "sha256:34738a82ab33cbd3bb6cd4cef823dbcabdd2b6b48a4e3a3054a2bbbf0c712be9"
             ],
-            "version": "==1.8.3"
+            "version": "==1.8.4"
         },
         "pylint-django": {
             "hashes": [
@@ -395,10 +395,10 @@
         },
         "tqdm": {
             "hashes": [
-                "sha256:91ac47ec2ba6bb92b7ba37706f4dea37019ddd784b22fd279a4b12d93327191d",
-                "sha256:4f2eb1d14804caf7095500fe11da0e481a47af912e7b57c93f886ac3c40a49dd"
+                "sha256:185f0db47cd591c843774678e44fe4933caa5fda36177eb96f22033e4bcd9702",
+                "sha256:b94af236084ceaad93a6ada00bd9976900b172ec9b821828ed0d4b53f7431170"
             ],
-            "version": "==4.20.0"
+            "version": "==4.21.0"
         },
         "urllib3": {
             "hashes": [
