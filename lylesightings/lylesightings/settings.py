@@ -150,3 +150,6 @@ LOCATION_FIELD = {
     'provider.google.api_key': GOOGLE_MAPS_KEY,
     'map.zoom': 10
 }
+
+INSTAGRAM_USER = os.environ.get("INSTAGRAM_USER")
+INSTAGRAM_PASSWORD = os.environ.get("INSTAGRAM_PASSWORD")

@@ -20,6 +20,7 @@ Tracking Lyle sightings since 2018.
  - [x] Pagination
  - [x] map view
    - [x] link markers to detail pages
+ - [ ] Fix Instagram importer
  - [ ] Show/hide status flag
  - [ ] admin UI to approve / reject new photos
  - [ ] admin UI to override image data, e.g. location information

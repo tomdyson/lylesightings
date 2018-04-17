@@ -19,6 +19,10 @@ class Command(BaseCommand):
         """instagram-scraper lylesighting --tag --media-metadata --latest --media-types=none -d scrapings"""
         subprocess.call([
             "instagram-scraper",
+            "-u",
+            settings.INSTAGRAM_USER,
+            "-p",
+            settings.INSTAGRAM_PASSWORD,
             "lylesighting",
             "--tag",
             "--media-metadata",
