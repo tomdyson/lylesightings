@@ -36,7 +36,10 @@ class Command(BaseCommand):
 
     def _parseJSON(self, file):
         posts = []
-        items = json.loads(open(file).read())
+        try:
+            items = json.loads(open(file).read())
+        except FileNotFoundError:
+            return []
         for item in items:
             post = {}
             url = "https://www.instagram.com/p/{0}/".format(item['shortcode'])
