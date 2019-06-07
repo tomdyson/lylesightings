@@ -31,8 +31,7 @@ SECRET_KEY = 'ul9c7hju$2xw+=fgh11!3@dd+buej-yn(td!x80m5xht+ilrgb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'lylesightings.com', '.lylesightings.com']
-
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'lylesightings.com', '.lylesightings.com', 'lylesightings.onrender.com']
 
 # Application definition
 
