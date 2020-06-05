@@ -14,7 +14,7 @@ pylint = "*"
 
 [packages]
 
-django = "==2.0.3"
+django = "==2.2.13"
 requests = "*"
 django-location-field = "*"
 instagram-scraper = "*"
